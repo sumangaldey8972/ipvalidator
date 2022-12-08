@@ -6,7 +6,7 @@ const app = express.Router();
 
 app.use(rateLimiterUsingThirdParty);
 
-let count = 0;
+let count = 97;
 app.get("/", async (req, res) => {
   try {
     count = count + 1;

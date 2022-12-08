@@ -5,12 +5,14 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 const app = express();
 const ipRouter = require("./routes/ip.routes");
+const userRouter = require("./routes/user.routes");
 
 app.use(cors());
 
 app.use(express.json());
 
 app.use("/ip", ipRouter);
+app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
   res.send("welcome to Ip chek API");
